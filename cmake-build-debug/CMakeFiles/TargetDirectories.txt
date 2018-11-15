@@ -1,0 +1,3 @@
+/home/freek/Documents/School/Gevorderd Programmeren/BrainFuckVM/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/freek/Documents/School/Gevorderd Programmeren/BrainFuckVM/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/freek/Documents/School/Gevorderd Programmeren/BrainFuckVM/cmake-build-debug/CMakeFiles/bfm.dir

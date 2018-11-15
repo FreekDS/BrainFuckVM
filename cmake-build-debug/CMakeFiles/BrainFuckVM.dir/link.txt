@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/BrainFuckVM.dir/main.cpp.o CMakeFiles/BrainFuckVM.dir/Data.cpp.o CMakeFiles/BrainFuckVM.dir/Instruction.cpp.o CMakeFiles/BrainFuckVM.dir/Program.cpp.o CMakeFiles/BrainFuckVM.dir/BrainFuckVM.cpp.o  -o BrainFuckVM 
