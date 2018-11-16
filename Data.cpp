@@ -21,14 +21,9 @@ Data &Data::operator++() {
 }
 
 std::ostream &operator<<(std::ostream &os, const Data &data) {
-    os << static_cast<char>(data.m_data);
+    os << data.m_data;
     return os;
 }
 
-Data Data::operator++(int) {
-    Data res(*this);
-    ++(*this);
-    return res;
-}
 
 Data::~Data() = default;

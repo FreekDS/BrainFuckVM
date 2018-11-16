@@ -8,13 +8,10 @@ using namespace std;
 using namespace bfm;
 
 int main(int argc, char* argv[]) {
-    Data d(4);
-    ++d;
-
     try {
 
     }catch (exception& e){
-
+        cerr << "Fatal exception occurred: " << e.what() << endl;
     }
     return 0;
 }

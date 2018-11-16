@@ -13,6 +13,8 @@ class Program {
 private:
     vector<Instruction*> m_instructions{};
     tape m_tape;
+    unsigned int m_dataPtr;
+    unsigned int m_instrPtr;
 public:
     explicit Program(const string& fileName);
 

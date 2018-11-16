@@ -52,15 +52,17 @@ void InstructionDec::execute() {
 InstructionOut::InstructionOut(unsigned int *dataPtr, unsigned int* instPtr, tape* data) : Instruction('.', dataPtr, instPtr, data) {}
 
 void InstructionOut::execute() {
-    Data* b = (*m_data)[*m_dataPtr];
-    char ch(b->getData());
-    std::cout << ch;
+    Data* data = (*m_data)[*m_dataPtr];
+    cout << data;
 }
 
 InstructionIn::InstructionIn(unsigned int *dataPtr, unsigned int* instPtr, tape* data) : Instruction(',', dataPtr, instPtr, data) {}
 
 void InstructionIn::execute() {
-
+    Data* data = (*m_data)[*m_dataPtr];
+    byte b;
+    cin >> b;
+    data->setData(b);
 }
 
 InstructionJumpFw::InstructionJumpFw(unsigned int *dataPtr, unsigned int* instPtr, tape* data) : Instruction('[', dataPtr, instPtr, data) {}
