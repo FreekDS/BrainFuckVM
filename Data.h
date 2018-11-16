@@ -22,6 +22,6 @@ public:
     byte getData() const;
 };
 
-typedef std::vector<Data*> tape;
+typedef std::vector<Data> tape;
 
 #endif //BRAINFUCKVM_DATA_H

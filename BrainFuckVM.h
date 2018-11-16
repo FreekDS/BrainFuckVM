@@ -12,8 +12,10 @@ namespace bfm {
 
     class BrainFuckVM {
     private:
-        vector<Data *> m_tape;
+        tape m_tape;
     public:
+        BrainFuckVM();
+
         void run(Program *program);
     };
 

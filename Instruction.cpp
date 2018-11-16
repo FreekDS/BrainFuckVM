@@ -36,33 +36,33 @@ void InstructionLeft::execute() {
 InstructionInc::InstructionInc(unsigned int *dataPtr, unsigned int* instPtr, tape* data) : Instruction('+', dataPtr, instPtr, data) {}
 
 void InstructionInc::execute() {
-    Data* current = (*m_data)[*m_dataPtr];
-    ++(*current);
+    Data& current = (*m_data)[*m_dataPtr];
+    ++current;
 }
 
 InstructionDec::InstructionDec(unsigned int *dataPtr, unsigned int* instPtr, tape* data) : Instruction('-', dataPtr, instPtr, data) {}
 
 void InstructionDec::execute() {
-    Data* current = (*m_data)[*m_dataPtr];
-    if(current->getData() <= 0)
+    Data& current = (*m_data)[*m_dataPtr];
+    if(current.getData() <= 0)
         throw runtime_error("Cannot decrement data in cell" + std::to_string(*m_dataPtr) + ":\nValue is 0");
-    --(*current);
+    --current;
 }
 
 InstructionOut::InstructionOut(unsigned int *dataPtr, unsigned int* instPtr, tape* data) : Instruction('.', dataPtr, instPtr, data) {}
 
 void InstructionOut::execute() {
-    Data* data = (*m_data)[*m_dataPtr];
+    Data& data = (*m_data)[*m_dataPtr];
     cout << data;
 }
 
 InstructionIn::InstructionIn(unsigned int *dataPtr, unsigned int* instPtr, tape* data) : Instruction(',', dataPtr, instPtr, data) {}
 
 void InstructionIn::execute() {
-    Data* data = (*m_data)[*m_dataPtr];
+    Data& data = (*m_data)[*m_dataPtr];
     byte b;
     cin >> b;
-    data->setData(b);
+    data.setData(b);
 }
 
 InstructionJumpFw::InstructionJumpFw(unsigned int *dataPtr, unsigned int* instPtr, tape* data) : Instruction('[', dataPtr, instPtr, data) {}
