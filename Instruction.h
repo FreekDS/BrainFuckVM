@@ -8,6 +8,8 @@ using namespace std;
 
 namespace bfm{
 
+    class Program;
+
     class Instruction {
     private:
         char m_symbol;
@@ -20,8 +22,10 @@ namespace bfm{
         explicit Instruction(char symbol);
         Instruction(char symbol, unsigned int *dataPtr, unsigned int* instPtr, tape* data);
         Instruction();
+        void setData(tape* data);
         virtual ~Instruction() = default;
         virtual void execute() = 0;
+        virtual void log() = 0;
     };
 
     class InstructionRight: public Instruction{
@@ -29,6 +33,8 @@ namespace bfm{
         InstructionRight(unsigned int *dataPtr, unsigned int* instPtr, tape* data);
 
         ~InstructionRight() override = default;
+
+        void log() override;
 
         void execute() override;
     };
@@ -39,6 +45,8 @@ namespace bfm{
 
         ~InstructionLeft() override = default;
 
+        void log() override;
+
         void execute() override;
     };
 
@@ -47,6 +55,8 @@ namespace bfm{
         InstructionInc(unsigned int *dataPtr, unsigned int* instPtr, tape* data);
 
         ~InstructionInc() override = default;
+
+        void log() override;
 
         void execute() override;
     };
@@ -57,6 +67,8 @@ namespace bfm{
 
         ~InstructionDec() override = default;
 
+        void log() override;
+
         void execute() override;
     };
 
@@ -65,6 +77,8 @@ namespace bfm{
         InstructionOut(unsigned int *dataPtr, unsigned int* instPtr, tape* data);
 
         ~InstructionOut() override = default;
+
+        void log() override;
 
         void execute() override;
     };
@@ -75,23 +89,37 @@ namespace bfm{
 
         ~InstructionIn() override = default;
 
+        void log() override;
+
         void execute() override;
     };
 
     class InstructionJumpFw: public Instruction{
+    private:
+        Program* m_program = nullptr;
     public:
         InstructionJumpFw(unsigned int *dataPtr, unsigned int* instPtr, tape* data);
 
         ~InstructionJumpFw() override = default;
 
+        void setProgram(Program* program);
+
+        void log() override;
+
         void execute() override;
     };
 
     class InstructionJumpBw: public Instruction{
+    private:
+        Program* m_program = nullptr;
     public:
         InstructionJumpBw(unsigned int *dataPtr, unsigned int* instPtr, tape* data);
 
         ~InstructionJumpBw() override = default;
+
+        void setProgram(Program* program);
+
+        void log() override;
 
         void execute() override;
     };

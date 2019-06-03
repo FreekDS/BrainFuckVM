@@ -8,9 +8,10 @@ typedef unsigned char byte;
 
 class Data {
 private:
-    byte m_data;
+    byte m_data = 0;
 public:
     explicit Data(byte data);
+    Data() = default;
     virtual ~Data();
 
     friend std::ostream &operator<<(std::ostream &os, const Data &data);

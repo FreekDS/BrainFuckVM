@@ -18,7 +18,9 @@ private:
 public:
     explicit Program(const string& fileName);
 
-    void run();
+    const vector<Instruction*>& getInstructions() const;
+
+    void run(bool debug = false);
 
     void setTape(tape* tape1);
 

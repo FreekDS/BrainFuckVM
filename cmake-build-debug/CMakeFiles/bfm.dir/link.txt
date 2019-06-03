@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/bfm.dir/main.cpp.o CMakeFiles/bfm.dir/Data.cpp.o CMakeFiles/bfm.dir/Instruction.cpp.o CMakeFiles/bfm.dir/Program.cpp.o CMakeFiles/bfm.dir/BrainFuckVM.cpp.o  -o bfm 
